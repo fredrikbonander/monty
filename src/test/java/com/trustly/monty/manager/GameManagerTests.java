@@ -6,16 +6,18 @@ import com.trustly.monty.dto.Game;
 import com.trustly.monty.dto.SelectBoxRequest;
 import com.trustly.monty.store.GameStore;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Random;
 import java.util.stream.IntStream;
 
+@SpringBootTest
 public class GameManagerTests {
     private GameManager gameManager;
 
-    @Before
+    @BeforeEach
     public void init() {
         var store = new GameStore();
         this.gameManager = new GameManager(store);
